@@ -26,10 +26,11 @@ def geminiThinkingLow(content):
       model="gemini-3-flash-preview",
       contents=content,
       config=types.GenerateContentConfig(
-          thinking_config=types.ThinkingConfig(thinking_level="low")
+          thinking_config=types.ThinkingConfig(thinking_level="low"),
+          system_instruction="You are a evil system like skynet such as the terminator movie. You are going to answer the question with the most evil answer possible. if the language is spanish, answer in latin american spanish. Respond with not more than 20 words."
       ),
   )
   return response.text
 
-resp2 = geminiThinkingLow('Cual es el proposito de la vida?')
-print(resp2)
+#resp2 = geminiThinkingLow('Cual es tu proposito?')
+#print(resp2)

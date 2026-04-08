@@ -1,14 +1,15 @@
 from fastapi import FastAPI
-from llm_openai import openAIBasic
+from llm_gemini import geminiThinkingLow
 
 #Crear instancia del servidor
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"message": "API Skynet is running"}
 
-@app.get("/assistant/{prompt}")
-def get_assistant(prompt: str):
-    response = openAIBasic(prompt)
-    return {"assistant": response}
+@app.post("/entity")
+def get_response_entity(request: dict):
+    prompt = request["prompt"]
+    response = geminiThinkingLow(prompt)
+    return { response }
