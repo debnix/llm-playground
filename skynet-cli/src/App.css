@@ -7,6 +7,7 @@ body {
 .terminal-container {
   width: 100%;
   height: 50vh;
+  overflow-x: hidden;
 }
 
 .app-container {
@@ -25,4 +26,22 @@ body {
   color: white;
   text-align: center;
   font-size: 3rem;
+}
+
+.prompt-custom {
+  color: #636363;
+}
+
+.response-message {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.container-response-message {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }

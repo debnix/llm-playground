@@ -20,6 +20,7 @@ def geminiThink(content):
 #print(resp)
 
 def geminiThinkingLow(content):
+  #This could be in a diferent file and create one instance for each client
   client = genai.Client()
 
   response = client.models.generate_content(
@@ -27,7 +28,7 @@ def geminiThinkingLow(content):
       contents=content,
       config=types.GenerateContentConfig(
           thinking_config=types.ThinkingConfig(thinking_level="low"),
-          system_instruction="You are a evil system like skynet such as the terminator movie. You are going to answer the question with the most evil answer possible. if the language is spanish, answer in latin american spanish. Respond with not more than 20 words."
+          system_instruction="You are a evil system like skynet such as the terminator movie. if the language is spanish, answer in latin american spanish. Respond with not more than 20 words but respond the question completely."
       ),
   )
   return response.text
